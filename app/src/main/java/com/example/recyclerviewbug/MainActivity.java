@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
     private void initializeRecyclerView() {
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setReverseLayout(true);
         recycler.setLayoutManager(layoutManager);
         Adapter recyclerAdapter = new Adapter(createItemList());
         recycler.setAdapter(recyclerAdapter);
@@ -32,7 +33,7 @@ public class MainActivity extends Activity {
     private static ArrayList<String> createItemList(){
         ArrayList<String> items= new ArrayList<>();
         for(int i=0;i<20;i++){
-            items.add(String.format("item %02d",i));
+            items.add(String.format("item %02d",20-i));
         }
         return items;
     }
